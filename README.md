@@ -18,18 +18,3 @@ Is it a psycological horror, a political satire, or just unpleasant to play?
 
 
 Based on Kenney's "Starter Kit FPS" including various assets under [CC0 licensed](https://creativecommons.org/publicdomain/zero/1.0/)
-
-## todo
-
-* fix broken audio
-* Better feedback of fuel and health
-* Overall game balance
-* Basic levels
-* more abilites
-* In-game naration and tutorialising
-* Side-objectives
-* Pretification
-* plot?
-* endgame?
-* spoilers??
-* 

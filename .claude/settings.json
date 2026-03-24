@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(d:\\SteamLibrary\\steamapps\\common\\Godot Engine\\projects\\fuel_for_the_engines\\*)"
+    ]
+  }
+}

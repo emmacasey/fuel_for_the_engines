@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0nt4n13a6448"]
 
-[ext_resource type="Script" path="res://addons/starlight/StarManager.gd" id="1_u877o"]
-[ext_resource type="Shader" path="res://addons/starlight/Star.gdshader" id="2_6rhhm"]
+[ext_resource type="Script" uid="uid://btasvu8m2d4ed" path="res://addons/starlight/StarManager.gd" id="1_u877o"]
+[ext_resource type="Shader" uid="uid://cjb10tmd2shee" path="res://addons/starlight/Star.gdshader" id="2_6rhhm"]
 [ext_resource type="Texture2D" uid="uid://cweg0rded3pvf" path="res://addons/starlight/psf-textures/jwst.exr" id="3_wqe40"]
 
 [node name="Stars" type="Node3D"]

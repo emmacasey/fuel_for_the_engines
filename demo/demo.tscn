@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwy238cxfbs2q"]
 
 [ext_resource type="PackedScene" uid="uid://b0nt4n13a6448" path="res://addons/starlight/Stars.tscn" id="1_xvs24"]
-[ext_resource type="Script" path="res://addons/starlight/StarGenerator.gd" id="2_6mf2e"]
+[ext_resource type="Script" uid="uid://dytcwcu0gnca3" path="res://addons/starlight/StarGenerator.gd" id="2_6mf2e"]
 
 [sub_resource type="Environment" id="Environment_ah14t"]
 background_energy_multiplier = 0.0

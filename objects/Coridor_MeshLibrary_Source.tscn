@@ -64,6 +64,9 @@ mesh = ExtResource("1_a4vkk")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorBox/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pd26q")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
+
 [node name="CoridorCorner" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.76735, 0, -11.4857)
 mesh = ExtResource("1_t48oa")
@@ -72,6 +75,9 @@ mesh = ExtResource("1_t48oa")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorCorner/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_pynwa")
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="CoridorCorner"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138329, 4.75659, 0.0522118)
 
 [node name="CoridorEnd" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.19884, 0, -2.95679)
@@ -82,6 +88,9 @@ mesh = ExtResource("8_a0lxa")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorEnd/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_8qdt5")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorEnd"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
+
 [node name="CoridorEndFloorless" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99717, 0, 4.12511)
 mesh = ExtResource("4_c4to0")
@@ -90,6 +99,9 @@ mesh = ExtResource("4_c4to0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorEndFloorless/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_6uflv")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorEndFloorless"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
 
 [node name="CoridorEndStairs" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1282, 0, -18.351)
@@ -100,6 +112,9 @@ mesh = ExtResource("5_off3s")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorEndStairs/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_dr4j5")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorEndStairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
+
 [node name="CoridorStraight" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.315, 0, -9.38121)
 mesh = ExtResource("6_ttola")
@@ -108,6 +123,9 @@ mesh = ExtResource("6_ttola")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorStraight/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_axcvx")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorStraight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
 
 [node name="CoridorStraightFloorless" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.292, 0, -1.12381)
@@ -118,6 +136,9 @@ mesh = ExtResource("7_fg012")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorStraightFloorless/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_1k03x")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorStraightFloorless"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
+
 [node name="CoridorStraightStairs" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5424, 0, 7.63681)
 mesh = ExtResource("8_4srnc")
@@ -126,6 +147,9 @@ mesh = ExtResource("8_4srnc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorStraightStairs/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_o3act")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorStraightStairs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
 
 [node name="CoridorT" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5921, 0, -17.865)
@@ -136,6 +160,9 @@ mesh = ExtResource("9_73fws")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorT/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_bd2qq")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorT"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
+
 [node name="CoridorTopless" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7019, 9.53674e-07, -8.57298)
 mesh = ExtResource("10_q1dsi")
@@ -144,6 +171,9 @@ mesh = ExtResource("10_q1dsi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorTopless/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_roecw")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorTopless"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
 
 [node name="CoridorTFloorless" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.9966, -9.53674e-07, -0.577444)
@@ -154,6 +184,9 @@ mesh = ExtResource("11_rm7rf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorTFloorless/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_lpdmc")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorTFloorless"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
+
 [node name="CoridorTTopless" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.1186, 0, 7.80384)
 mesh = ExtResource("12_humev")
@@ -163,6 +196,9 @@ mesh = ExtResource("12_humev")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorTTopless/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_iwy8k")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorTTopless"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)
+
 [node name="CoridorOpen" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14146, 0, 11.9529)
 mesh = ExtResource("3_mkjhc")
@@ -171,3 +207,6 @@ mesh = ExtResource("3_mkjhc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CoridorOpen/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_5ctis")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="CoridorOpen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.8, 0)

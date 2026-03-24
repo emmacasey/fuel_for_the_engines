@@ -54,4 +54,3 @@ func _process(delta):
 
 func fuel_engine(amount):
 	fuel+=amount*ratio
-

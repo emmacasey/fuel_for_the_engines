@@ -1,64 +1,61 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxvvlck8lej3f"]
+[gd_scene format=3 uid="uid://jgu7sgf4741h"]
 
-[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_q8fpv"]
-[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="2_elriq"]
-[ext_resource type="Script" uid="uid://dx1wcxhccf25r" path="res://scenes/environment.gd" id="2_weogu"]
-[ext_resource type="Script" uid="uid://c2pcutua5p31h" path="res://scripts/hud.gd" id="3_s8mkj"]
-[ext_resource type="AudioStream" uid="uid://c3614kk4syd0" path="res://assets/sounds/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3" id="3_vnwmq"]
-[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="3_w27de"]
-[ext_resource type="PackedScene" uid="uid://dpm3l05d7fu35" path="res://objects/platform.tscn" id="5_3s40e"]
-[ext_resource type="PackedScene" uid="uid://r7rt7pth4u7o" path="res://objects/wall_low.tscn" id="5_6vel1"]
-[ext_resource type="AudioStream" uid="uid://cdgk58ewybf6l" path="res://assets/sounds/487442__tim_verberne__spaceship-cockpit-ambience-02.wav" id="5_l0bk0"]
-[ext_resource type="PackedScene" uid="uid://c71evdjblk5wp" path="res://objects/wall_high.tscn" id="7_cabne"]
-[ext_resource type="PackedScene" uid="uid://bvx5cvigosg0s" path="res://objects/platform_large_grass.tscn" id="7_wggef"]
-[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemy.tscn" id="8_7ty2f"]
-[ext_resource type="PackedScene" uid="uid://b0nt4n13a6448" path="res://addons/starlight/Stars.tscn" id="11_pg8oc"]
-[ext_resource type="Script" uid="uid://dytcwcu0gnca3" path="res://addons/starlight/StarGenerator.gd" id="12_mca7t"]
-[ext_resource type="AudioStream" uid="uid://b8smno4kmqf27" path="res://assets/sounds/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg" id="13_m25qk"]
-[ext_resource type="AudioStream" uid="uid://6wj37b8e5l7v" path="res://assets/sounds/133100__klankbeeld__horror-ambience-10.wav" id="14_d13wo"]
+[ext_resource type="Environment" uid="uid://jvmpkdwaeaq" path="res://scenes/main-environment.tres" id="1_gyj1w"]
+[ext_resource type="Script" uid="uid://dx1wcxhccf25r" path="res://scenes/environment.gd" id="2_70583"]
+[ext_resource type="AudioStream" uid="uid://c3614kk4syd0" path="res://assets/sounds/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3" id="3_ib01m"]
+[ext_resource type="AudioStream" uid="uid://6wj37b8e5l7v" path="res://assets/sounds/133100__klankbeeld__horror-ambience-10.wav" id="4_3r8pd"]
+[ext_resource type="AudioStream" uid="uid://cdgk58ewybf6l" path="res://assets/sounds/487442__tim_verberne__spaceship-cockpit-ambience-02.wav" id="5_d378m"]
+[ext_resource type="AudioStream" uid="uid://b8smno4kmqf27" path="res://assets/sounds/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg" id="6_518h7"]
+[ext_resource type="PackedScene" uid="uid://dl2ed4gkybggf" path="res://objects/player.tscn" id="7_yoevu"]
+[ext_resource type="Script" uid="uid://c2pcutua5p31h" path="res://scripts/hud.gd" id="8_vf1yj"]
+[ext_resource type="FontFile" uid="uid://biqtga8moh7ah" path="res://assets/fonts/lilita_one_regular.ttf" id="9_ehk0n"]
+[ext_resource type="PackedScene" uid="uid://d2g78tpqbyf5g" path="res://objects/enemy.tscn" id="10_38i7r"]
+[ext_resource type="MeshLibrary" uid="uid://cxt7f5phd4rvl" path="res://maps/coridor_mesh_library.tres" id="11_o3vlj"]
+[ext_resource type="PackedScene" uid="uid://b0nt4n13a6448" path="res://addons/starlight/Stars.tscn" id="15_dji1c"]
+[ext_resource type="Script" uid="uid://dytcwcu0gnca3" path="res://addons/starlight/StarGenerator.gd" id="16_r2g7e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_fpmwk"]
-font = ExtResource("3_w27de")
+font = ExtResource("9_ehk0n")
 font_size = 36
 outline_size = 12
 outline_color = Color(0, 0, 0, 0.470588)
 
-[node name="Main" type="Node3D"]
+[node name="Main" type="Node3D" unique_id=590440105]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_q8fpv")
-script = ExtResource("2_weogu")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2052538479]
+environment = ExtResource("1_gyj1w")
+script = ExtResource("2_70583")
 
-[node name="AlarmSound" type="AudioStreamPlayer" parent="WorldEnvironment"]
-stream = ExtResource("3_vnwmq")
+[node name="AlarmSound" type="AudioStreamPlayer" parent="WorldEnvironment" unique_id=497061083]
+stream = ExtResource("3_ib01m")
 pitch_scale = 0.28
 autoplay = true
 
-[node name="SpookyMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]
-stream = ExtResource("14_d13wo")
+[node name="SpookyMusic" type="AudioStreamPlayer" parent="WorldEnvironment" unique_id=1931181548]
+stream = ExtResource("4_3r8pd")
 volume_db = -80.0
 autoplay = true
 
-[node name="AmbientMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]
-stream = ExtResource("5_l0bk0")
+[node name="AmbientMusic" type="AudioStreamPlayer" parent="WorldEnvironment" unique_id=102851887]
+stream = ExtResource("5_d378m")
 volume_db = -30.0
 autoplay = true
 
-[node name="HappyMusic" type="AudioStreamPlayer" parent="WorldEnvironment"]
-stream = ExtResource("13_m25qk")
+[node name="HappyMusic" type="AudioStreamPlayer" parent="WorldEnvironment" unique_id=1527761553]
+stream = ExtResource("6_518h7")
 autoplay = true
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2089964034]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 100, 0)
 
-[node name="Player" parent="." node_paths=PackedStringArray("crosshair") instance=ExtResource("2_elriq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10259, 2.61063, -0.0435903)
+[node name="Player" parent="." unique_id=1107060762 node_paths=PackedStringArray("crosshair") instance=ExtResource("7_yoevu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10259, 13.6106, 12.9564)
 crosshair = NodePath("../HUD/Crosshair")
 
-[node name="HUD" type="CanvasLayer" parent="."]
-script = ExtResource("3_s8mkj")
+[node name="HUD" type="CanvasLayer" parent="." unique_id=486451752]
+script = ExtResource("8_vf1yj")
 
-[node name="Fuel" type="Label" parent="HUD"]
+[node name="Fuel" type="Label" parent="HUD" unique_id=1755827967]
 offset_left = 1159.0
 offset_top = 628.0
 offset_right = 1249.0
@@ -70,7 +67,7 @@ text = "100%"
 label_settings = SubResource("LabelSettings_fpmwk")
 vertical_alignment = 2
 
-[node name="Crosshair" type="TextureRect" parent="HUD"]
+[node name="Crosshair" type="TextureRect" parent="HUD" unique_id=1602188381]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -85,7 +82,7 @@ grow_vertical = 2
 scale = Vector2(0.35, 0.35)
 pivot_offset = Vector2(64, 64)
 
-[node name="Health" type="Label" parent="HUD"]
+[node name="Health" type="Label" parent="HUD" unique_id=1290078162]
 offset_left = 48.0
 offset_top = 627.0
 offset_right = 138.0
@@ -96,99 +93,37 @@ text = "100%"
 label_settings = SubResource("LabelSettings_fpmwk")
 vertical_alignment = 2
 
-[node name="Enemies" type="Node" parent="."]
+[node name="Enemies" type="Node" parent="." unique_id=76346347]
 
-[node name="enemy" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
+[node name="enemy" parent="Enemies" unique_id=1664844736 node_paths=PackedStringArray("player") instance=ExtResource("10_38i7r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.5, -6)
 player = NodePath("../../Player")
 value = 10
 
-[node name="enemy2" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9718, 5, -0.0544491)
-player = NodePath("../../Player")
-value = 20
+[node name="Level" type="Node" parent="." unique_id=804170400]
 
-[node name="enemy3" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(0.997197, 0.0748221, 0, -0.0748221, 0.997197, 0, 0, 0, 1, 14.3533, 4.29526, -9.19611)
-player = NodePath("../../Player")
-value = 20
+[node name="GridMap" type="GridMap" parent="Level" unique_id=1713104486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -5, -8)
+mesh_library = ExtResource("11_o3vlj")
+cell_size = Vector3(5, 5, 5)
+data = {
+"cells": PackedInt32Array(0, 1, 1441804, 1, 1, 1441804, 1, 2, 1441804, 0, 2, 1441804, 2, 1, 1441797, 3, 1, 1441797, 4, 1, 1441797, 5, 1, 1441799, 6, 1, 1441797, 7, 0, 655365, 7, 1, 1441793, 7, 65535, 2, 1, 0, 2, 65535, 2, 1441794, 0, 0, 1, 2, 2, 1, 2, 3, 655368, 0, 3, 8, 1, 3, 12, 2, 4, 1441793, 0, 4, 655361, 1, 4, 1048584, 65541, 1, 1048579, 65542, 1, 1, 65542, 2, 5, 65542, 3, 5, 65542, 4, 1441793, 65541, 4, 1441797, 65540, 4, 1441797, 65539, 4, 8, 65539, 5, 655362, 65539, 3, 2)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="enemy4" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 0.798205, 0.602386, 0, -0.602386, 0.798205, 10, 15, 35)
-player = NodePath("../../Player")
-value = 50
+[node name="Decoration" type="Node" parent="." unique_id=639639686]
 
-[node name="enemy5" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7826, 4.19939, -5.40108)
-player = NodePath("../../Player")
-value = 10
-
-[node name="enemy6" parent="Enemies" node_paths=PackedStringArray("player") instance=ExtResource("8_7ty2f")]
-transform = Transform3D(0.739666, 0.36333, 0.566467, 0, 0.841737, -0.539888, -0.672974, 0.399337, 0.622604, -13.9143, 1.6584, 1.29758)
-player = NodePath("../../Player")
-value = 50
-
-[node name="Level" type="Node" parent="."]
-
-[node name="wall-low" parent="Level" instance=ExtResource("5_6vel1")]
-transform = Transform3D(0.965926, 0, 0.258819, -0.102972, 0.917449, 0.384296, -0.237453, -0.397853, 0.886188, -1.43081, 0.763454, -5.45427)
-
-[node name="wall-low3" parent="Level" instance=ExtResource("5_6vel1")]
-transform = Transform3D(0.0135783, 0.999908, 1.61864e-09, 0.999908, -0.0135783, 1.19198e-07, 1.19209e-07, 0, -1, 12.5494, 5.36544, 8.69804)
-
-[node name="platform" parent="Level" instance=ExtResource("5_3s40e")]
-transform = Transform3D(0.999627, 0.027311, 0, -0.027311, 0.999627, 0, 0, 0, 1, -1.7187, 4.28387, 4.72585)
-
-[node name="platform2" parent="Level" instance=ExtResource("5_3s40e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.5, 2.5, -2.5)
-
-[node name="platform3" parent="Level" instance=ExtResource("5_3s40e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3, -3.5)
-
-[node name="platform4" parent="Level" instance=ExtResource("5_3s40e")]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 7, 1, -2)
-
-[node name="wall-high" parent="Level" instance=ExtResource("7_cabne")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.92284, 0.476098, 2.62568)
-
-[node name="wall-high2" parent="Level" instance=ExtResource("7_cabne")]
-transform = Transform3D(0.705515, 0.0670575, -0.705515, -0.0474169, 0.997749, 0.0474169, 0.707107, 0, 0.707107, 11.413, 2.56068, 0.307239)
-
-[node name="platform-large-grass" parent="Level" instance=ExtResource("7_wggef")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-
-[node name="platform-large-grass2" parent="Level" instance=ExtResource("7_wggef")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -2, 0.5, -6)
-
-[node name="platform-large-grass3" parent="Level" instance=ExtResource("7_wggef")]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -9.5202, -0.0423857, 1.0857)
-
-[node name="platform-large-grass5" parent="Level" instance=ExtResource("7_wggef")]
-transform = Transform3D(0.866026, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866026, 12, 2.5, -5)
-
-[node name="platform-large-grass4" parent="Level" instance=ExtResource("7_wggef")]
-transform = Transform3D(1.93185, 0, 0.517638, 0, 2, 0, -0.517638, 0, 1.93185, 12.2798, 3.49813, 7.8294)
-
-[node name="platform-flat" parent="Level" instance=ExtResource("7_wggef")]
-transform = Transform3D(4.82963, 0, 1.2941, 0, 2, 0, -1.2941, 0, 4.82963, 20.28, 1.498, 27.829)
-
-[node name="Decoration" type="Node" parent="."]
-
-[node name="Stars" parent="Decoration" instance=ExtResource("11_pg8oc")]
-script = ExtResource("12_mca7t")
+[node name="Stars" parent="Decoration" unique_id=530338556 instance=ExtResource("15_dji1c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42755, 2.29004, 4.8457)
+script = ExtResource("16_r2g7e")
 size = 10000.0
 star_count = 100000
 rng_seed = 1234
 generate_at_origin = false
-shader_params/emission_energy = 5e+08
+shader_params/emission_energy = 500000000.0
 shader_params/clamp_output = true
 
 [connection signal="update_fuel" from="WorldEnvironment" to="HUD" method="_on_fuel_updated"]
 [connection signal="fuel_engine" from="Player" to="WorldEnvironment" method="fuel_engine"]
 [connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
 [connection signal="enemy_destroyed" from="Enemies/enemy" to="Player" method="on_enemy_destroyed"]
-[connection signal="enemy_destroyed" from="Enemies/enemy2" to="Player" method="on_enemy_destroyed"]
-[connection signal="enemy_destroyed" from="Enemies/enemy3" to="Player" method="on_enemy_destroyed"]
-[connection signal="enemy_destroyed" from="Enemies/enemy4" to="Player" method="on_enemy_destroyed"]
-[connection signal="enemy_destroyed" from="Enemies/enemy5" to="Player" method="on_enemy_destroyed"]
-[connection signal="enemy_destroyed" from="Enemies/enemy6" to="Player" method="on_enemy_destroyed"]

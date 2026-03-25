@@ -56,11 +56,10 @@ c) better assets, (double check licences etc)
 
 ## Scenes (`scenes/`)
 Full game scenes and their attached scripts.
-- `main.tscn` — the main gameplay scene
+- `main.tscn` — the main gameplay scene; corridor layout built from GridMap + MeshLibrary tiles
 - `main-environment.tres` — WorldEnvironment resource for main.tscn
-- `environment.gd` — script on the WorldEnvironment node in main.tscn; manages ship fuel level, drain from parasites, lighting/music reactions
+- `environment.gd` — script on the WorldEnvironment node; manages ship fuel level, drain from parasites, lighting/music reactions
 - `title.tscn` + `title.gd` — title/start screen
-- `coridor.tscn` — corridor level layout built from the MeshLibrary tiles
 
 ## Objects (`objects/`)
 Reusable scene prefabs (nodes + attached scripts).
@@ -68,7 +67,7 @@ Reusable scene prefabs (nodes + attached scripts).
 - `enemy.tscn` + `enemy.gd` — floating parasite enemy: sine movement, shooting at player, emits `enemy_destroyed(value)` on death
 - `blaster.tscn` — weapon model scene (no script; configured via Weapon resource)
 - `impact.tscn` + `impact.gd` — bullet impact sprite, frees itself after animation
-- `platform.tscn`, `platform_large_grass.tscn`, `wall_high.tscn`, `wall_low.tscn` — platformer-era props, actively used in `main.tscn`
+- `wall_high.tscn`, `wall_low.tscn` — wall props kept as potential obstacles
 
 ## Maps (`maps/`)
 Level/environment construction assets.

@@ -17,20 +17,33 @@ const T_TOPLESS = 11 # CoridorTTopless
 const OPEN = 12 # CoridorOpen           — 4-way cross
 
 # ── Orientations (Y-axis rotations, Godot orthogonal basis indices) ───────────
-# Assumed conventions — adjust if tiles face the wrong way in-editor:
+# Indices 0/10/16/22 are NOT evenly-spaced 90° steps. Their actual Y rotations:
+#   R0 =  0  →   0°         R1 = 10  → 180°
+#   R2 = 16  → 270° CW      R3 = 22  →  90° CW
 #
-#   Straight:  R0/R2 runs along Z;  R1/R3 runs along X
-#   End:       R0 opens toward -Z   R1 opens toward +X
-#              R2 opens toward +Z   R3 opens toward -X
-#   Corner:    R0 (-Z,+X)  R1 (+X,+Z)  R2 (+Z,-X)  R3 (-X,-Z)
-#   T-jct:     R0 opens (-Z,+X,-X)  stub at +Z
-#              R1 opens (+X,+Z,-Z)  stub at -X
-#              R2 opens (+Z,+X,-X)  stub at -Z
-#              R3 opens (-X,+Z,-Z)  stub at +X
-const R0 = 0 # default
-const R1 = 10 # 90° CW from above
-const R2 = 16 # 180°
-const R3 = 22 # 270° CW
+# Tile defaults have local +Z as the primary opening direction. Applying the
+# rotation matrices gives these world-space results:
+#
+#   End / EndStairs (local opening = +Z):
+#     R0 → opens +Z (south)    R1 → opens -Z (north)
+#     R2 → opens +X (east)     R3 → opens -X (west)
+#
+#   Straight (symmetric ±Z openings):
+#     R0 or R1 → runs along Z axis
+#     R2 or R3 → runs along X axis
+#
+#   Corner (local openings = +Z and -X):
+#     R0 → (+Z, -X)   south+west    R1 → (-Z, +X)   north+east
+#     R2 → (+X, +Z)   east+south    R3 → (-X, -Z)   west+north
+#
+#   T-junction (local openings = +X, +Z, -Z; stub at -X):
+#     R0 → opens +X,+Z,-Z  stub -X (west)    R1 → opens -X,+Z,-Z  stub +X (east)
+#     R2 → opens -Z,+X,-X  stub +Z (south)   R3 → opens +Z,+X,-X  stub -Z (north)
+#
+const R0 = 0  # 0°
+const R1 = 10 # 180°
+const R2 = 16 # 270° CW  (use this for X-running straights and east-opening ends)
+const R3 = 22 # 90°  CW  (use this for west-opening ends, south-branching T-jcts)
 
 # ─────────────────────────────────────────────────────────────────────────────
 

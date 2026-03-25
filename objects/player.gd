@@ -336,5 +336,6 @@ func action_fuel_engine():
 	fuel_engine.emit(amount)
 	
 func die():
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://scenes/title.tscn")
 	

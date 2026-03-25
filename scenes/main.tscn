@@ -120,7 +120,7 @@ size = 10000.0
 star_count = 100000
 rng_seed = 1234
 generate_at_origin = false
-shader_params/emission_energy = 5.0
+shader_params/emission_energy = 500000000.0
 shader_params/clamp_output = true
 
 [connection signal="update_fuel" from="WorldEnvironment" to="HUD" method="_on_fuel_updated"]

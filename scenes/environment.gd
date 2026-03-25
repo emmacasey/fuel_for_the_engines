@@ -42,9 +42,9 @@ func _process(delta):
 		environment.background_energy_multiplier = 0
 
 	if fuel > 8500:
-		environment.ambient_light_energy = 1
+		environment.ambient_light_energy = 0.3
 	elif fuel > 8000:
-		environment.ambient_light_energy = 0.5
+		environment.ambient_light_energy = 0.15
 	else:
 		environment.ambient_light_energy = 0
 

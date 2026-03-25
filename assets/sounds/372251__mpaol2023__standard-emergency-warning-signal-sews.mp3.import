@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://c3614kk4syd0"
-path="res://.godot/imported/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3-233ec9f82f97de7df08796764e3f3366.mp3str"
+path="res://.godot/imported/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3-904799457a951b2a2b664f9ef835a041.mp3str"
 
 [deps]
 
-source_file="res://sounds/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3"
-dest_files=["res://.godot/imported/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3-233ec9f82f97de7df08796764e3f3366.mp3str"]
+source_file="res://assets/sounds/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3"
+dest_files=["res://.godot/imported/372251__mpaol2023__standard-emergency-warning-signal-sews.mp3-904799457a951b2a2b664f9ef835a041.mp3str"]
 
 [params]
 

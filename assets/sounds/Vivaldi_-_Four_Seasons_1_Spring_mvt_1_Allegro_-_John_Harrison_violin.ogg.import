@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://b8smno4kmqf27"
-path="res://.godot/imported/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg-0669afa3ca2069da5c9aee0f8e622927.oggvorbisstr"
+path="res://.godot/imported/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg-f43218533633a2dad8fba91ff58c57db.oggvorbisstr"
 
 [deps]
 
-source_file="res://sounds/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg"
-dest_files=["res://.godot/imported/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg-0669afa3ca2069da5c9aee0f8e622927.oggvorbisstr"]
+source_file="res://assets/sounds/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg"
+dest_files=["res://.godot/imported/Vivaldi_-_Four_Seasons_1_Spring_mvt_1_Allegro_-_John_Harrison_violin.ogg-f43218533633a2dad8fba91ff58c57db.oggvorbisstr"]
 
 [params]
 

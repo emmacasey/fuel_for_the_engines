@@ -4,20 +4,22 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dd3oln1ucgqpd"
-path="res://.godot/imported/blaster-repeater.glb-5f1125651aecb8bf54890e793b8c6da4.scn"
+path="res://.godot/imported/blaster-repeater.glb-25d865dbd42be439c1a6ae2a67f54d24.scn"
 
 [deps]
 
-source_file="res://models/blaster-repeater.glb"
-dest_files=["res://.godot/imported/blaster-repeater.glb-5f1125651aecb8bf54890e793b8c6da4.scn"]
+source_file="res://assets/models/blaster-repeater.glb"
+dest_files=["res://.godot/imported/blaster-repeater.glb-25d865dbd42be439c1a6ae2a67f54d24.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
+nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -32,6 +34,9 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
 _subresources={}
 gltf/naming_version=0
 gltf/embedded_image_handling=1

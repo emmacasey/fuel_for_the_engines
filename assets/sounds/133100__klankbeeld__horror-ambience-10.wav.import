@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://6wj37b8e5l7v"
-path="res://.godot/imported/133100__klankbeeld__horror-ambience-10.wav-ef88396ee5aa5fd13b9de4f2ea9e2c76.sample"
+path="res://.godot/imported/133100__klankbeeld__horror-ambience-10.wav-c00a37e1bdf29a834a11312fe14bd18e.sample"
 
 [deps]
 
-source_file="res://sounds/133100__klankbeeld__horror-ambience-10.wav"
-dest_files=["res://.godot/imported/133100__klankbeeld__horror-ambience-10.wav-ef88396ee5aa5fd13b9de4f2ea9e2c76.sample"]
+source_file="res://assets/sounds/133100__klankbeeld__horror-ambience-10.wav"
+dest_files=["res://.godot/imported/133100__klankbeeld__horror-ambience-10.wav-c00a37e1bdf29a834a11312fe14bd18e.sample"]
 
 [params]
 

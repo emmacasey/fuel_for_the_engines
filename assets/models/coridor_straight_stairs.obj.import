@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dyoknxp328lnp"
-path="res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh"
+path="res://.godot/imported/coridor_straight_stairs.obj-07ec062b9998f5e2900b974d02adb2bb.mesh"
 
 [deps]
 
-files=["res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh"]
+files=["res://.godot/imported/coridor_straight_stairs.obj-07ec062b9998f5e2900b974d02adb2bb.mesh"]
 
-source_file="res://models/coridor_straight_stairs.obj"
-dest_files=["res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh", "res://.godot/imported/coridor_straight_stairs.obj-a29ccf1b7cc457f3ef3945da6d066b89.mesh"]
+source_file="res://assets/models/coridor_straight_stairs.obj"
+dest_files=["res://.godot/imported/coridor_straight_stairs.obj-07ec062b9998f5e2900b974d02adb2bb.mesh", "res://.godot/imported/coridor_straight_stairs.obj-07ec062b9998f5e2900b974d02adb2bb.mesh"]
 
 [params]
 

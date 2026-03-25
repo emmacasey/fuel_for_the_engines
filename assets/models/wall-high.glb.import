@@ -4,20 +4,22 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c743irj356lax"
-path="res://.godot/imported/wall-high.glb-74f2e81af43ef5254fe14637810326a5.scn"
+path="res://.godot/imported/wall-high.glb-1cc502b3ccf0f06eb6cd690d41d0b1f9.scn"
 
 [deps]
 
-source_file="res://models/wall-high.glb"
-dest_files=["res://.godot/imported/wall-high.glb-74f2e81af43ef5254fe14637810326a5.scn"]
+source_file="res://assets/models/wall-high.glb"
+dest_files=["res://.godot/imported/wall-high.glb-1cc502b3ccf0f06eb6cd690d41d0b1f9.scn"]
 
 [params]
 
 nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
+nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
 meshes/generate_lods=true
@@ -32,6 +34,9 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
 _subresources={}
 gltf/naming_version=0
 gltf/embedded_image_handling=1

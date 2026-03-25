@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://cbg1pqwfjuod3"
-path="res://.godot/imported/coridor_end_stairs.obj-b7968cc3cff1bdf845f42079252a93cf.mesh"
+path="res://.godot/imported/coridor_end_stairs.obj-57802783bd54ea5bab05f6f271d747ad.mesh"
 
 [deps]
 
-files=["res://.godot/imported/coridor_end_stairs.obj-b7968cc3cff1bdf845f42079252a93cf.mesh"]
+files=["res://.godot/imported/coridor_end_stairs.obj-57802783bd54ea5bab05f6f271d747ad.mesh"]
 
-source_file="res://models/coridor_end_stairs.obj"
-dest_files=["res://.godot/imported/coridor_end_stairs.obj-b7968cc3cff1bdf845f42079252a93cf.mesh", "res://.godot/imported/coridor_end_stairs.obj-b7968cc3cff1bdf845f42079252a93cf.mesh"]
+source_file="res://assets/models/coridor_end_stairs.obj"
+dest_files=["res://.godot/imported/coridor_end_stairs.obj-57802783bd54ea5bab05f6f271d747ad.mesh", "res://.godot/imported/coridor_end_stairs.obj-57802783bd54ea5bab05f6f271d747ad.mesh"]
 
 [params]
 

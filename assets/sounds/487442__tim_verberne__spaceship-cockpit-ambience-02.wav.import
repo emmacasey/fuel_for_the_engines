@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cdgk58ewybf6l"
-path="res://.godot/imported/487442__tim_verberne__spaceship-cockpit-ambience-02.wav-ce82ba63f28fa77f34afc7b505744545.sample"
+path="res://.godot/imported/487442__tim_verberne__spaceship-cockpit-ambience-02.wav-353821f65a149683c0f2d2fd18aca18f.sample"
 
 [deps]
 
-source_file="res://sounds/487442__tim_verberne__spaceship-cockpit-ambience-02.wav"
-dest_files=["res://.godot/imported/487442__tim_verberne__spaceship-cockpit-ambience-02.wav-ce82ba63f28fa77f34afc7b505744545.sample"]
+source_file="res://assets/sounds/487442__tim_verberne__spaceship-cockpit-ambience-02.wav"
+dest_files=["res://.godot/imported/487442__tim_verberne__spaceship-cockpit-ambience-02.wav-353821f65a149683c0f2d2fd18aca18f.sample"]
 
 [params]
 

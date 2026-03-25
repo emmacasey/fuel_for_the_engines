@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://b1qd85bor51bx"
-path="res://.godot/imported/coridor_end_floorless.obj-658e261d324df8dd3c432bfd86ae9b76.mesh"
+path="res://.godot/imported/coridor_end_floorless.obj-1ffa87f4b5d3048dd97fb50eda2c81ce.mesh"
 
 [deps]
 
-files=["res://.godot/imported/coridor_end_floorless.obj-658e261d324df8dd3c432bfd86ae9b76.mesh"]
+files=["res://.godot/imported/coridor_end_floorless.obj-1ffa87f4b5d3048dd97fb50eda2c81ce.mesh"]
 
-source_file="res://models/coridor_end_floorless.obj"
-dest_files=["res://.godot/imported/coridor_end_floorless.obj-658e261d324df8dd3c432bfd86ae9b76.mesh", "res://.godot/imported/coridor_end_floorless.obj-658e261d324df8dd3c432bfd86ae9b76.mesh"]
+source_file="res://assets/models/coridor_end_floorless.obj"
+dest_files=["res://.godot/imported/coridor_end_floorless.obj-1ffa87f4b5d3048dd97fb50eda2c81ce.mesh", "res://.godot/imported/coridor_end_floorless.obj-1ffa87f4b5d3048dd97fb50eda2c81ce.mesh"]
 
 [params]
 

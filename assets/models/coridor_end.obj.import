@@ -4,14 +4,14 @@ importer="wavefront_obj"
 importer_version=1
 type="Mesh"
 uid="uid://dbhvoeg5jgwbo"
-path="res://.godot/imported/coridor_end.obj-f3d4236b9fe3c1b2d058cfec9452a288.mesh"
+path="res://.godot/imported/coridor_end.obj-a8f7dcd1ea9a66612da76f742c83b184.mesh"
 
 [deps]
 
-files=["res://.godot/imported/coridor_end.obj-f3d4236b9fe3c1b2d058cfec9452a288.mesh"]
+files=["res://.godot/imported/coridor_end.obj-a8f7dcd1ea9a66612da76f742c83b184.mesh"]
 
-source_file="res://models/coridor_end.obj"
-dest_files=["res://.godot/imported/coridor_end.obj-f3d4236b9fe3c1b2d058cfec9452a288.mesh", "res://.godot/imported/coridor_end.obj-f3d4236b9fe3c1b2d058cfec9452a288.mesh"]
+source_file="res://assets/models/coridor_end.obj"
+dest_files=["res://.godot/imported/coridor_end.obj-a8f7dcd1ea9a66612da76f742c83b184.mesh", "res://.godot/imported/coridor_end.obj-a8f7dcd1ea9a66612da76f742c83b184.mesh"]
 
 [params]
 

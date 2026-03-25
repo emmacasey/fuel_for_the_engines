@@ -6,14 +6,14 @@ const BOX = 0 # CoridorBox            — fully enclosed
 const CORNER = 1 # CoridorCorner         — 90° bend
 const END = 2 # CoridorEnd            — dead end cap
 const END_FL = 3 # CoridorEndFloorless - dead end with open floor, put above stairs
-const END_STAIRS = 4 # CoridorEndStairs      — dead end, stairs going up
+const END_STAIRS = 4 # CoridorEndStairs      — dead end, stairs going up into the tile above
 const STRAIGHT = 5 # CoridorStraight       — straight passage
-const STRAIGHT_FL = 6 # CoridorStraightFloorless
-const STRAIGHT_STAIRS = 7 # CoridorStraightStairs — passage ramping up one Y level
+const STRAIGHT_FL = 6 # CoridorStraightFloorless - straight passage without floor.
+const STRAIGHT_STAIRS = 7 # CoridorStraightStairs — straight passage with stairs to the tile above
 const T_JCT = 8 # CoridorT              — T-junction
-const TOPLESS = 9 # CoridorTopless
-const T_FL = 10 # CoridorTFloorless
-const T_TOPLESS = 11 # CoridorTTopless
+const TOPLESS = 9 # CoridorTopless - straight passage without roof, use with floorless above to make a drop
+const T_FL = 10 # CoridorTFloorless - T-junction without floor
+const T_TOPLESS = 11 # CoridorTTopless - T-junction without roof
 const OPEN = 12 # CoridorOpen           — 4-way cross
 
 # ── Orientations (Y-axis rotations, Godot orthogonal basis indices) ───────────
@@ -40,7 +40,7 @@ const OPEN = 12 # CoridorOpen           — 4-way cross
 #     R0 → opens +X,+Z,-Z  stub -X (west)    R1 → opens -X,+Z,-Z  stub +X (east)
 #     R2 → opens -Z,+X,-X  stub +Z (south)   R3 → opens +Z,+X,-X  stub -Z (north)
 #
-const R0 = 0  # 0°
+const R0 = 0 # 0°
 const R1 = 10 # 180°
 const R2 = 16 # 270° CW  (use this for X-running straights and east-opening ends)
 const R3 = 22 # 90°  CW  (use this for west-opening ends, south-branching T-jcts)

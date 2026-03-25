@@ -34,7 +34,7 @@ func _process(delta):
 
 
 func damage(amount):
-	Audio.play("sounds/enemy_hurt.ogg")
+	Audio.play("assets/sounds/enemy_hurt.ogg")
 
 	health -= amount
 
@@ -46,7 +46,7 @@ func damage(amount):
 
 
 func destroy():
-	Audio.play("sounds/enemy_destroy.ogg")
+	Audio.play("assets/sounds/enemy_destroy.ogg")
 	
 	enemy_destroyed.emit(value) # Update fuel on HUD
 
@@ -74,6 +74,6 @@ func _on_timer_timeout():
 			muzzle_b.play("default")
 			muzzle_b.rotation_degrees.z = randf_range(-45, 45)
 
-			Audio.play("sounds/enemy_attack.ogg")
+			Audio.play("assets/sounds/enemy_attack.ogg")
 
 			collider.damage(5)  # Apply damage to player

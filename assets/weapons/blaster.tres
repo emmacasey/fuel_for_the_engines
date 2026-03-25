@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="Weapon" load_steps=4 format=3 uid="uid://c56y8pqoyk15f"]
 
-[ext_resource type="Texture2D" uid="uid://2jld33y6h5pq" path="res://sprites/crosshair.png" id="1_2onsr"]
-[ext_resource type="PackedScene" uid="uid://b2p7bbkuxf7m" path="res://models/blaster.glb" id="1_x0glg"]
+[ext_resource type="Texture2D" uid="uid://2jld33y6h5pq" path="res://assets/sprites/crosshair.png" id="1_2onsr"]
+[ext_resource type="PackedScene" uid="uid://b2p7bbkuxf7m" path="res://assets/models/blaster.glb" id="1_x0glg"]
 [ext_resource type="Script" uid="uid://gtxbpg2ckyb3" path="res://scripts/weapon.gd" id="2_107w7"]
 
 [resource]
@@ -16,5 +16,5 @@ damage = 25.0
 spread = 1.0
 shot_count = 3
 knockback = 40
-sound_shoot = "sounds/blaster.ogg"
+sound_shoot = "assets/sounds/blaster.ogg"
 crosshair = ExtResource("1_2onsr")

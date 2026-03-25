@@ -40,3 +40,58 @@ Write plot, narration, narative structure etc. Build the narrator (a voiceover? 
 ## Stage 3
 Design the ship etc.
 
+
+
+# File Structure
+
+## Scenes (`scenes/`)
+Full game scenes and their attached scripts.
+- `main.tscn` — the main gameplay scene
+- `main-environment.tres` — WorldEnvironment resource for main.tscn
+- `Fuel.gd` — script on the WorldEnvironment node in main.tscn; manages ship fuel level, drain from parasites, lighting/music reactions
+- `title.tscn` + `title.gd` — title/start screen
+- `coridor.tscn` — corridor level layout built from the MeshLibrary tiles
+
+## Objects (`objects/`)
+Reusable scene prefabs (nodes + attached scripts).
+- `player.tscn` + `player.gd` — FPS player: movement, shooting, fuel drain/gain, health, signals
+- `enemy.tscn` + `enemy.gd` — floating parasite enemy: sine movement, shooting at player, emits `enemy_destroyed(value)` on death
+- `blaster.tscn` — weapon model scene (no script; configured via Weapon resource)
+- `impact.tscn` + `impact.gd` — bullet impact sprite, frees itself after animation
+- `platform.tscn`, `platform_large_grass.tscn`, `wall_high.tscn`, `wall_low.tscn` — leftover platformer-era props (may be unused in corridor layout)
+- `Coridor_MeshLibrary_Source.tscn` — source scene used to bake `coridor_mesh_library.tres`
+- `coridor_mesh_library.tres` — MeshLibrary used by the GridMap in `coridor.tscn`
+
+## Scripts (`scripts/`)
+Standalone scripts with no paired scene: singletons and resource class definitions.
+- `audio.gd` — Audio autoload singleton; pooled AudioStreamPlayer, supports comma-separated random sound paths
+- `weapon.gd` — `Weapon` Resource class definition (model, stats, sounds, crosshair)
+- `hud.gd` — CanvasLayer HUD script; updates health and fuel display labels
+
+## Weapons (`weapons/`)
+Weapon resource instances (data only, defined by `scripts/weapon.gd`).
+- `blaster.tres` — single-shot blaster config
+- `blaster-repeater.tres` — rapid-fire repeater config
+
+## Models (`models/`)
+3D model source files.
+- `coridor_*.obj` + `.mtl` — corridor tile set (13 variants: straight, corner, T-junction, end, stairs, open, floorless, topless, box). Note: "coridor" is a consistent typo throughout.
+- `blaster.glb`, `blaster-repeater.glb` — weapon models
+- `enemy-flying.glb` — parasite enemy model
+- `platform.glb`, `platform-large-grass.glb`, `grass.glb`, `grass-small.glb`, `wall-high.glb`, `wall-low.glb` — older platformer-era models (may be unused)
+
+## Sounds (`sounds/`)
+OGG audio files: `blaster.ogg`, `blaster_repeater.ogg`, `enemy_attack.ogg`, `enemy_destroy.ogg`, `enemy_hurt.ogg`, `jump_a/b/c.ogg`, `land.ogg`, `walking.ogg`, `weapon_change.ogg`, alarm MP3, Vivaldi track.
+
+## Sprites (`sprites/`)
+2D sprites: `crosshair.png`, `crosshair-repeater.png`, `burst.png` (muzzle flash spritesheet → `burst_animation.tres`), `hit.png`, `blob_shadow.png`.
+
+## Addons (`addons/starlight/`)
+Third-party star field generator addon. `demo/` contains its demo scene — not game content.
+
+## Source/Excluded Folders
+- `vector/` — `.fla` source file for sprites (`.gdignore` so Godot ignores it)
+- `screenshots/` — project screenshots (`.gdignore`)
+- `fonts/` — `lilita_one_regular.ttf`
+- `docs/` — currently contains `screenshot.jpg` plus unrelated files from a different project (`fits2exr.py`, `poppy psfs.ipynb`)
+

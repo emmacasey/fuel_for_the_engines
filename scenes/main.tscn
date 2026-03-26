@@ -123,7 +123,3 @@ generate_at_origin = false
 shader_params/emission_energy = 500000000.0
 shader_params/clamp_output = true
 
-[connection signal="update_fuel" from="WorldEnvironment" to="HUD" method="_on_fuel_updated"]
-[connection signal="fuel_engine" from="Player" to="WorldEnvironment" method="fuel_engine"]
-[connection signal="health_updated" from="Player" to="HUD" method="_on_health_updated"]
-[connection signal="enemy_destroyed" from="Enemies/enemy" to="Player" method="on_enemy_destroyed"]

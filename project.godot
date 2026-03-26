@@ -25,6 +25,8 @@ config/icon="res://icon.png"
 [autoload]
 
 Audio="*res://scripts/audio.gd"
+FuelManager="*res://scripts/fuel_manager.gd"
+MechanicsManager="*res://scripts/mechanics_manager.gd"
 
 [display]
 

@@ -25,30 +25,48 @@ The game opens with the player being told to kill parasites in order to fuel the
 
 # Project Plan
 
-## Stage 1
-Focus on the primary gameplay loop.
-a) build a testing environment with a few corridors, doors, jumps, enemies etc.
-b) experiment with moving, killing, fueling engines etc
-c) work out new abilities that player fuel provides, new problems that low ship fuel causes etc.
-d) tweak the audio and visual experience to make increasing ship fuel vicerally/immediately rewarding
+Full roadmap with implementation details is in `development roadmap.md`. Summary of phases below.
 
-## Stage 2
-Plot
-a) Write plot
-b) Write narration
-c) Design side quests, level structure etc
+## Key Design Decisions
+- **Health IS player fuel.** One pool for damage, abilities, shooting, jumping. No separate health system.
+- **Ship fuel is much larger than the player.** Transfers use a low multiplier (~1-10%) so filling the ship requires many player refuels.
+- **Both fuels normalised 0.0-1.0 internally.**
+- **FuelManager and MechanicsManager autoload singletons** own all fuel logic and mechanic toggling.
+- **Transfer ceremony TBD** — three modes to implement and test: instant, held, hybrid (small instant + larger held).
+- **Parasite feedback system must be preserved.** Living parasites feed fuel back to the ship on a 600-frame delay. Killing them removes long-term income. This IS the plot twist, implemented mechanically.
 
-## Stage 3
-Mechanics
-a) Build the narrator (a voiceover? text?)
-b) handle saving etc
-c) build any additional mechanics for side quests etc
+## Phase 0: Foundational Refactor
+Migrate existing systems into FuelManager/MechanicsManager singletons. Game should play identically afterward.
 
-## Stage 4
-Wrap it up.
-a) final level design
-b) title screen etc
-c) better assets, (double check licences etc)
+## Phase 1: The Transfer Action
+Implement the three transfer modes (instant, held, hybrid). Add transfer visuals/audio. Playtest to pick one.
+
+## Phase 2: Ship Fuel Atmosphere
+Smooth lighting curves, layered audio crossfades, post-processing (saturation/vignette/contrast), observation deck reward.
+
+## Phase 3: Player Fuel Mechanics
+Refine movement tiers (jump curves, sprint, stumble), combat degradation (weapon drift, cooldowns), HUD degradation (gauge inaccuracy, intrusive warnings), dash ability.
+
+## Phase 4: Level & Enemies
+Expand grid to a 3-5 minute loop, enemy spawning system, enemy behaviour polish (patrol, alert, visibility checks).
+
+## Phase 5: The Feedback Loop
+Instant ship feedback vs gradual player feedback asymmetry, transfer prompt pressure, the ratchet (invisible drain rate increase per transfer).
+
+## Phase 6: Ship Flavour & Crew
+Static crew NPCs, ship cat, environmental micro-rewards (coffee machine, save station glow, gravity flickers).
+
+## Phase 7: Advanced Player Mechanics
+Scanner pulse, wall grip, grapple tether, melee strike.
+
+## Phase 8: The Narrator
+Text-based narrator triggered by events, tone shifts with ship fuel, always encourages transferring, doubt seeds after ~50 kills.
+
+## Phase 9: Systems Polish
+Fuel balancing, save system, death/respawn tuning.
+
+## Phase 10: Audio & Visual Polish
+Asset upgrades, particles/shaders, sound design. Only after mechanics are locked.
 
 # File Structure
 

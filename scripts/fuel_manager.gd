@@ -8,8 +8,10 @@ var ship_fuel: float = 1.0
 var ship_drain_rate: float = 0.0
 var player_drain_rate: float = 0.0
 
-# Transfer multiplier: how much ship fuel a unit of player fuel buys.
-# 1.0 = equal exchange. Lower values create the "ship is much bigger" feeling.
+# Fraction of current player fuel transferred per E press (0.1 = 10%).
+@export var transfer_chunk: float = 0.1
+# How much ship fuel a unit of player fuel buys. 1.0 = equal exchange.
+# Lower values create the "ship is much bigger" feeling.
 @export var transfer_multiplier: float = 1.0
 
 # Parasite feedback: 600-frame ring buffer of normalized per-second feedback rates.

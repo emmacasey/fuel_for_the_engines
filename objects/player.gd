@@ -46,9 +46,13 @@ func _ready() -> void:
 	weapon = weapons[weapon_index]
 	initiate_change_weapon(weapon_index)
 
-	var tiers = preload("res://objects/movement_tiers.gd").new()
-	add_child(tiers)
-
+	# Passive: signal-driven, self-managing  
+	for mechanic in [
+		preload("res://objects/movement_tiers.gd").new(),
+		preload("res://objects/player_alarm_mechanic.gd").new(),
+	]:
+		add_child(mechanic)
+	# Active: player.gd calls methods on these directly
 	jump_mechanic = preload("res://objects/jump_mechanic.gd").new()
 	add_child(jump_mechanic)
 
@@ -62,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	movement_velocity = transform.basis * movement_velocity
 
 	applied_velocity = velocity.lerp(movement_velocity, delta * 10)
-	applied_velocity.y = -gravity
+	applied_velocity.y = - gravity
 
 	velocity = applied_velocity
 	move_and_slide()
@@ -222,7 +226,7 @@ func damage(amount: int) -> void:
 
 
 func action_fuel_engine() -> void:
-	FuelManager.transfer_to_ship(FuelManager.player_fuel * 0.1)
+	FuelManager.transfer_to_ship(FuelManager.player_fuel * FuelManager.transfer_chunk)
 
 
 func die() -> void:

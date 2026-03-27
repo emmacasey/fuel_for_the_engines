@@ -24,12 +24,10 @@ var gravity := 0.0
 
 var previously_floored := false
 
-var jump_single := true
-var jump_double := true
-
 var container_offset = Vector3(1.2, -1.1, -2.75)
 
 var tween: Tween
+var jump_mechanic
 
 @onready var camera = $Head/Camera
 @onready var raycast = $Head/Camera/RayCast
@@ -50,6 +48,9 @@ func _ready() -> void:
 
 	var tiers = preload("res://objects/movement_tiers.gd").new()
 	add_child(tiers)
+
+	jump_mechanic = preload("res://objects/jump_mechanic.gd").new()
+	add_child(jump_mechanic)
 
 
 func _physics_process(delta: float) -> void:
@@ -119,7 +120,7 @@ func handle_controls(_delta: float) -> void:
 		action_shoot()
 
 	if Input.is_action_just_pressed("jump"):
-		action_jump()
+		jump_mechanic.try_jump()
 
 	if Input.is_action_just_pressed("weapon_toggle"):
 		action_weapon_toggle()
@@ -131,22 +132,8 @@ func handle_controls(_delta: float) -> void:
 func handle_gravity(delta: float) -> void:
 	gravity += 20 * delta
 	if gravity > 0 and is_on_floor():
-		jump_single = true
+		jump_mechanic.on_landed()
 		gravity = 0
-
-
-func action_jump() -> void:
-	if jump_single or jump_double:
-		if jump_double and FuelManager.player_fuel > 0.5 and FuelManager.drain_player(0.05):
-			jump_double = false
-		elif jump_single and FuelManager.drain_player(0.01):
-			jump_single = false
-			jump_double = true
-		else:
-			return
-
-		Audio.play("assets/sounds/jump_a.ogg, sounds/jump_b.ogg, sounds/jump_c.ogg")
-		gravity = -jump_strength
 
 
 func action_shoot() -> void:

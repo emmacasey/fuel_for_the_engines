@@ -96,7 +96,17 @@ vertical_alignment = 2
 [node name="Enemies" type="Node" parent="." unique_id=76346347]
 
 [node name="enemy" parent="Enemies" unique_id=1664844736 node_paths=PackedStringArray("player") instance=ExtResource("10_38i7r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 2.5, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 5, 10)
+player = NodePath("../../Player")
+value = 10
+
+[node name="enemy2" parent="Enemies" unique_id=760666737 node_paths=PackedStringArray("player") instance=ExtResource("10_38i7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 5, 10)
+player = NodePath("../../Player")
+value = 10
+
+[node name="enemy3" parent="Enemies" unique_id=2112309027 node_paths=PackedStringArray("player") instance=ExtResource("10_38i7r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 10, -10)
 player = NodePath("../../Player")
 value = 10
 
@@ -114,11 +124,4 @@ metadata/_editor_floor_ = Vector3(0, 1, 0)
 [node name="Decoration" type="Node" parent="." unique_id=639639686]
 
 [node name="Stars" parent="Decoration" unique_id=530338556 instance=ExtResource("15_dji1c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.42755, 2.29004, 4.8457)
 script = ExtResource("16_r2g7e")
-size = 10000.0
-star_count = 100000
-rng_seed = 1234
-generate_at_origin = false
-shader_params/emission_energy = 500000000.0
-shader_params/clamp_output = true

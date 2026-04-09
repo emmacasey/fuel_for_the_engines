@@ -27,43 +27,46 @@ Before starting, here's what's built and working:
 
 ---
 
-## Phase 0: Foundational Refactor
+## Phase 0: Foundational Refactor ✓
 
 *Restructure existing systems into the singleton architecture. Nothing new gameplay-wise — the game should play identically after this phase, just wired differently.*
 
-### 0.1 — FuelManager Singleton
+### 0.1 — FuelManager Singleton ✓
 
-Create an autoload `FuelManager` that owns both fuel pools and all fuel logic.
+- [x] `player_fuel: float` (0.0–1.0). Replaces `player.health`.
+- [x] `ship_fuel: float` (0.0–1.0). Replaces `environment.fuel`.
+- [x] Signals: `player_fuel_changed(old_value, new_value)`, `ship_fuel_changed(old_value, new_value)`
+- [x] Threshold signals: `player_fuel_crossed_threshold(name, direction)`, `ship_fuel_crossed_threshold(name, direction)` — thresholds at `"critical"` (0.15), `"low"` (0.35), `"medium"` (0.55), `"high"` (0.75), `"full"` (0.95)
+- [x] Methods: `drain_player(amount) -> bool`, `damage_player(amount)` (force-drain, for incoming hits), `add_player(amount)`, `drain_ship(amount)`, `add_ship(amount)`
+- [x] `transfer_to_ship(amount)` — uses `transfer_multiplier` and `transfer_chunk`, both exported vars. `action_fuel_engine()` calls `transfer_to_ship(player_fuel * transfer_chunk)`.
+- [x] `ship_drain_rate: float` — computed from registered enemies at startup via deferred init
+- [x] Parasite feedback system migrated: 600-frame ring buffer, living enemies feed ship fuel on delay, killing removes long-term income
+- [x] `player_drain_rate: float` (starts at 0)
+- [x] Enemy kills call `FuelManager.add_player(value / 100.0)`
 
-- [ ] `player_fuel: float` (0.0–1.0). Replaces `player.health` as the authoritative source.
-- [ ] `ship_fuel: float` (0.0–1.0). Replaces `environment.fuel`.
-- [ ] Signals: `player_fuel_changed(old_value, new_value)`, `ship_fuel_changed(old_value, new_value)`
-- [ ] Threshold signals: `player_fuel_crossed_threshold(name, direction)`, `ship_fuel_crossed_threshold(name, direction)` — thresholds at `"critical"` (0.15), `"low"` (0.35), `"medium"` (0.55), `"high"` (0.75), `"full"` (0.95)
-- [ ] Methods: `drain_player(amount) -> bool` (returns false if insufficient — replaces `try_drain`), `add_player(amount)`, `drain_ship(amount)`, `add_ship(amount)`
-- [ ] `transfer_to_ship(amount)` — applies a `transfer_multiplier` (start at 0.1) so transferring 0.1 player fuel only adds 0.01 ship fuel. This is the "ship is bigger than you" feeling. **Design note:** keep the multiplier as an exported var so we can tune it easily. The transfer method should be called by whatever transfer UI we settle on (instant/held/hybrid) — do not hardcode transfer ceremony here, just the fuel math.
-- [ ] `ship_drain_rate: float` — passive ship fuel drain per second
-- [ ] Migrate the parasite feedback system from environment.gd: the lagged-value array where living parasites feed fuel back on delay. This is critical — preserve the exact behaviour where killing parasites removes long-term fuel income.
-- [ ] `player_drain_rate: float` (starts at 0, some future mechanics may add passive player drain)
-- [ ] Enemy kills call `FuelManager.add_player(value)` instead of directly modifying player health
+### 0.2 — MechanicsManager Singleton ✓
 
-### 0.2 — MechanicsManager Singleton
+- [x] Autoload `MechanicsManager` with dictionary of registered mechanics
+- [x] `MechanicBase` class: `activate()`, `deactivate()`, `on_player_fuel_changed`, `on_ship_fuel_changed`
+- [x] Mechanics register on `_ready()` and connect to FuelManager signals directly
+- [x] Debug toggle: F1 lists all mechanics, F2–F9 toggle in registration order
+- [x] Mechanics implemented: `MovementTiersMechanic`, `JumpMechanic`, `PlayerAlarmMechanic`, `ShipLightingMechanic`, `ShipAudioMechanic`
+- [x] **Pattern established:** passive mechanics (signal-driven) instantiated via loop in host node's `_ready()`; active mechanics (called directly by host) stored as named variables
 
-A registry for toggling mechanics on/off, gated by fuel thresholds.
+### 0.3 — Rewire Existing Systems ✓
 
-- [ ] Autoload `MechanicsManager` with a dictionary of registered mechanics
-- [ ] Each mechanic is a script/resource implementing: `activate()`, `deactivate()`, `on_player_fuel_changed(old, new)`, `on_ship_fuel_changed(old, new)`
-- [ ] Mechanics register themselves on `_ready()` and connect to FuelManager signals
-- [ ] A simple debug toggle system (keyboard shortcuts or a debug panel) to force-enable/disable any mechanic mid-play
-- [ ] Migrate existing tiered abilities from player.gd (movement speed, jump strength, double jump, alarm sound) into this system as the first registered mechanics
+- [x] player.gd: `health` removed, all fuel ops go through FuelManager. Ability block removed.
+- [x] environment.gd: all fuel/drain/lagged logic removed. Now just boots `ShipLightingMechanic` and `ShipAudioMechanic`.
+- [x] enemy.gd: registers with FuelManager on `_ready()`, calls `FuelManager.add_player()` on destroy.
+- [x] hud.gd: listens to FuelManager signals.
+- [x] Lighting: smooth `lerp` across full fuel range (was stepped if/elif).
+- [x] Audio: smooth `volume_db` lerp (was hard pause/unpause).
 
-### 0.3 — Rewire Existing Systems
+### 0.4 — Polish & Cleanup (before Phase 1)
 
-- [ ] player.gd: remove `health` int, read from `FuelManager.player_fuel` instead. Remove the tiered ability block (lines 109-124) — these are now mechanics in MechanicsManager.
-- [ ] environment.gd: remove `fuel`, `drain`, `lagged_values` — ship fuel logic lives in FuelManager now. Keep the lighting/audio response code but have it listen to `FuelManager.ship_fuel_changed` instead of tracking its own fuel.
-- [ ] enemy.gd: `enemy_destroyed` signal still fires, but the connection goes to FuelManager instead of player.
-- [ ] hud.gd: listen to FuelManager signals for both displays.
-- [ ] Smooth the lighting response: replace the stepped if/elif blocks with `lerp`/curves so lighting transitions feel continuous rather than jumping between 3 states.
-- [ ] Smooth the audio response similarly: crossfade music layers rather than hard pause/unpause.
+- [ ] Randomise parasite feedback delay — replace exact 600-frame buffer with per-enemy randomised delay (e.g. 400–800 frames) so feedback feels organic
+- [ ] Remove `show_fuel` toggle from hud.gd — always show ship fuel
+- [ ] Unit tests for FuelManager: drain/add/transfer maths, threshold signal firing, ring buffer behaviour, transfer_multiplier and transfer_chunk effects
 
 **Playtest checkpoint:** The game should feel identical to before, maybe slightly smoother on lighting/audio transitions. All the same mechanics, just cleaner wiring. If anything feels different, fix it before proceeding.
 

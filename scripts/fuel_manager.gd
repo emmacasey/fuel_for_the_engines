@@ -95,7 +95,9 @@ func damage_player(amount: float) -> void:
 
 
 func add_player(amount: float) -> void:
+	print("adding ", amount, " to player fuel, was ", player_fuel)
 	_set_player_fuel(player_fuel + amount)
+	print("now", player_fuel)
 
 
 func drain_ship(amount: float) -> void:

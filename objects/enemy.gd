@@ -17,7 +17,7 @@ signal enemy_destroyed(value: int)
 
 func _ready() -> void:
 	target_position = position
-	FuelManager.register_enemy(self)
+	FuelManager.register_enemy(self )
 
 
 func _process(delta: float) -> void:
@@ -58,4 +58,4 @@ func _on_timer_timeout() -> void:
 			muzzle_b.rotation_degrees.z = randf_range(-45, 45)
 
 			Audio.play("assets/sounds/enemy_attack.ogg")
-			collider.damage(5)
+			collider.damage(1)
